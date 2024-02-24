@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/categories_item.dart';
+import '../components/categories_item.dart';
+
 import 'Numbers_page.dart';
 
 class HomePage extends StatelessWidget {
