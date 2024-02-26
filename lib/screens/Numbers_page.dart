@@ -10,47 +10,53 @@ class NumbersPage extends StatelessWidget {
     Number(
         image: 'assets/images/numbers/number_one.png',
         inName: 'one',
-        jbName: 'ichi'),
+        jbName: 'ichi',
+        sound: 'number_one_sound.mp3'),
     Number(
         image: 'assets/images/numbers/number_two.png',
         inName: 'Two',
-        jbName: 'Ni'),
-    Number(
-        image: 'assets/images/numbers/number_one.png',
-        inName: 'one',
-        jbName: 'ichi'),
+        jbName: 'Ni',
+        sound: 'number_two_sound.mp3'),
     Number(
         image: 'assets/images/numbers/number_three.png',
         inName: 'Three',
-        jbName: 'San'),
+        jbName: 'San',
+        sound: 'number_three_sound.mp3'),
     Number(
         image: 'assets/images/numbers/number_four.png',
         inName: 'four',
-        jbName: 'Shi'),
+        jbName: 'Shi',
+        sound: 'number_four_sound.mp3'),
     Number(
-        image: 'assets/images/numbers/number_five.pngg',
+        image: 'assets/images/numbers/number_five.png',
         inName: 'five',
-        jbName: 'Go'),
+        jbName: 'Go',
+        sound: 'number_five_sound.mp3'),
     Number(
-        image: 'assets/images/numbers/number_six.pngg',
+        image: 'assets/images/numbers/number_six.png',
         inName: 'six',
-        jbName: 'Roku'),
+        jbName: 'Roku',
+        sound: 'number_six_sound.mp3'),
     Number(
         image: 'assets/images/numbers/number_seven.png',
         inName: 'seven',
-        jbName: 'Sebun'),
+        jbName: 'Sebun',
+        sound: 'number_seven_sound.mp3'),
     Number(
         image: 'assets/images/numbers/number_eight.png',
         inName: 'eight',
-        jbName: 'hachi'),
+        jbName: 'hachi',
+        sound: 'number_eight_sound.mp3'),
     Number(
         image: 'assets/images/numbers/number_nine.png',
         inName: 'nine',
-        jbName: 'kyu'),
+        jbName: 'kyu',
+        sound: 'number_nine_sound.mp3'),
     Number(
         image: 'assets/images/numbers/number_ten.png',
         inName: 'ten',
-        jbName: 'Ju'),
+        jbName: 'Ju',
+        sound: 'number_ten_sound.mp3'),
   ];
 
   @override
@@ -67,39 +73,11 @@ class NumbersPage extends StatelessWidget {
         backgroundColor: Color(0xff46322B),
       ),
       backgroundColor: Color(0xfFFEF6DB),
-      body: ListView(
-        children: [
-          Item(
-            number: number[0],
-          ),
-          Item(
-            number: number[1],
-          ),
-          Item(
-            number: number[2],
-          ),
-          Item(
-            number: number[3],
-          ),
-          Item(
-            number: number[4],
-          ),
-          Item(
-            number: number[5],
-          ),
-          Item(
-            number: number[6],
-          ),
-          Item(
-            number: number[7],
-          ),
-          Item(
-            number: number[8],
-          ),
-          Item(
-            number: number[9],
-          ),
-        ],
+      body: ListView.builder(
+        itemCount: number.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Item(number: number[index]);
+        },
       ),
     );
   }
