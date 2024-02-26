@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:language_learning_app/screens/colors_page.dart';
+import 'package:language_learning_app/screens/family_members.dart';
+import 'package:language_learning_app/screens/phrases_page.dart';
 
 import '../components/categories_item.dart';
 
@@ -32,17 +35,29 @@ class HomePage extends StatelessWidget {
           carts(
             txt: 'FamilyMembers',
             color: Colors.green,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const FamilyMembersPage();
+              }));
+            },
           ),
           carts(
             txt: 'Colors',
             color: Colors.purple,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const ColorPage();
+              }));
+            },
           ),
           carts(
             txt: 'Phrases',
             color: Colors.blue,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const PhrasesPage();
+              }));
+            },
           ),
         ],
       ),

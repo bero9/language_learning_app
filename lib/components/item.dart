@@ -4,28 +4,29 @@ import 'package:flutter/material.dart';
 import '../models/number.dart';
 
 class Item extends StatelessWidget {
-  const Item({super.key, required this.number});
+  const Item({super.key, required this.color, required this.prefixName, required this.item});
 
-  final Number number;
-
+  final Items item;
+ final Color color;
+ final String prefixName;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      color: Colors.orangeAccent,
+      color: color,
       child: Row(
         children: [
-          Container(color: Color(0xfFFEF6DB), child: Image.asset(number.image)),
+          Container(color: Color(0xfFFEF6DB), child: Image.asset(item.image)),
           Padding(
             padding: const EdgeInsets.only(left: 8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  number.jbName,
+                  item.jbName,
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
-                Text(number.inName,
+                Text(item.inName,
                     style: TextStyle(color: Colors.white, fontSize: 18))
               ],
             ),
@@ -34,9 +35,9 @@ class Item extends StatelessWidget {
             flex: 1,
           ),
           IconButton(onPressed: () async{
-            AudioCache.instance = AudioCache(prefix: 'assets/sounds/numbers/');
+            AudioCache.instance = AudioCache(prefix: prefixName);
             final player = AudioPlayer();
-            await player.play(AssetSource(number.sound));
+            await player.play(AssetSource(item.sound));
 
           }, icon: Icon(
             Icons.play_arrow,
